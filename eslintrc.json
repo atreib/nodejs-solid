@@ -1,0 +1,11 @@
+{
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 8,
+        "ecmaFeatures": {
+            "globalReturn": true,
+            "experimentalObjectRestSpread": true
+        }
+    }
+}

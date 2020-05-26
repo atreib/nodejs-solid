@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist", // aonde o typescript vai depositar o JS gerado
+        "module": "commonjs", // o padrao de JS que será gerado
+        "target": "es2019", // a versão que o typescript deverá gerar o JS
+        "esModuleInterop": true, // converterá as dependencias para o nosso padrão (mais novo que o JS)
+        "allowJs": true // permite dependencias/modulos em JS   
+    }
+}
