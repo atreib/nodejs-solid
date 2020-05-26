@@ -4,7 +4,7 @@
   "description": "Nodejs Typescript TDD Clean SOLID",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/andev-road/nodejs-solid#readme",
   "devDependencies": {
+    "@types/jest": "^25.2.3",
     "@types/node": "^14.0.5",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "eslint": "^6.8.0",
@@ -38,7 +39,9 @@
     "eslint-plugin-standard": "^4.0.1",
     "git-commit-msg-linter": "^2.4.2",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.6",
+    "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"
   }
 }
