@@ -1,9 +1,11 @@
+import { PasswordValidator } from './../protocols/password-validator'
 import {
     MOCK_USER_NONAME,
     MOCK_USER_NOEMAIL,
     MOCK_USER_NOPASSWORD,
     MOCK_USER_NOCONFIRMATIONPASSWORD,
-    MOCK_USER_INVALIDEMAIL
+    MOCK_USER_INVALIDEMAIL,
+    MOCK_USER_INVALIDPASS
 } from './../../../__mocks__/signup.mocks'
 import { SignUpController } from './signup'
 import { MissingParamError, InvalidParamError } from './../errors/'
@@ -15,9 +17,16 @@ const makeSut = (): SignUpController => {
             return (email.indexOf('@') >= 0)
         }
     }
-
     const emailValidatorStub = new EmailValidatorStub()
-    return new SignUpController(emailValidatorStub)
+
+    class PasswordValidatorStub implements PasswordValidator {
+        isConfirmed (pass: string, conf: string): boolean {
+            return (pass === conf)
+        }
+    }
+    const passValidatorStub = new PasswordValidatorStub()
+
+    return new SignUpController(emailValidatorStub, passValidatorStub)
 }
 
 describe('SignUpController test suite', function () {
@@ -69,5 +78,15 @@ describe('SignUpController test suite', function () {
         const httpResponse = sut.handle(httpRequest)
         expect(httpResponse.statusCode).toBe(400)
         expect(httpResponse.body).toEqual(new InvalidParamError('email'))
+    })
+
+    test('Should return 400 if password and confirmation isnt equal', function () {
+        const sut = makeSut()
+        const httpRequest = {
+            body: MOCK_USER_INVALIDPASS
+        }
+        const httpResponse = sut.handle(httpRequest)
+        expect(httpResponse.statusCode).toBe(400)
+        expect(httpResponse.body).toEqual(new InvalidParamError('passwordConfirmation'))
     })
 })
