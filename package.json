@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-solid",
+  "version": "1.0.0",
+  "description": "Nodejs Typescript TDD Clean SOLID",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andev-road/nodejs-solid.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "tdd",
+    "clean",
+    "solid",
+    "api",
+    "git",
+    "docker",
+    "mocha"
+  ],
+  "author": "Andre Treib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andev-road/nodejs-solid/issues"
+  },
+  "homepage": "https://github.com/andev-road/nodejs-solid#readme"
+}
