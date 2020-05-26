@@ -4,7 +4,8 @@
   "description": "Nodejs Typescript TDD Clean SOLID",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:staged": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
     "api",
     "git",
     "docker",
-    "mocha"
+    "jest"
   ],
   "author": "Andre Treib",
   "license": "ISC",
