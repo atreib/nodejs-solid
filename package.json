@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/andev-road/nodejs-solid/issues"
   },
-  "homepage": "https://github.com/andev-road/nodejs-solid#readme"
+  "homepage": "https://github.com/andev-road/nodejs-solid#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^2.4.2"
+  }
 }
