@@ -4,6 +4,24 @@ const MOCK_USER_NONAME = {
     passwordConfirmation: 'any_password'
 }
 
+const MOCK_USER_NOEMAIL = {
+    name: 'any_name',
+    password: 'any_password',
+    passwordConfirmation: 'any_password'
+}
+
+const MOCK_USER_NOPASSWORD = {
+    name: 'any_name',
+    email: 'any_email@mail.com',
+    passwordConfirmation: 'any_password'
+}
+
+const MOCK_USER_NOCONFIRMATIONPASSWORD = {
+    name: 'any_name',
+    email: 'any_email@mail.com',
+    password: 'any_password'
+}
+
 const MOCK_USER_INVALIDEMAIL = {
     name: 'any_name',
     email: 'any_email',
@@ -37,5 +55,8 @@ export {
     MOCK_USER_2,
     MOCK_USER_INVALIDEMAIL,
     MOCK_USER_INVALIDPASS,
-    MOCK_USER_NONAME
+    MOCK_USER_NONAME,
+    MOCK_USER_NOEMAIL,
+    MOCK_USER_NOPASSWORD,
+    MOCK_USER_NOCONFIRMATIONPASSWORD
 }
