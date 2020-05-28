@@ -3,9 +3,17 @@
     "parserOptions": {
         "project": "./tsconfig.json",
         "ecmaVersion": 8,
+        "sourceType": "module",
         "ecmaFeatures": {
+            "jsx": true,
             "globalReturn": true,
+            "modules": true,
             "experimentalObjectRestSpread": true
         }
+    },
+    "rules": {
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "curly": "off"
     }
 }
