@@ -18,6 +18,7 @@ import {
     EmailValidator,
     PasswordValidator
 } from './signup.protocols'
+import { EmailValidatorAdapter } from './../../../utils/email-validator/email-validator.adapter'
 import { AccountModel } from '../../../domain/models/account'
 import { AddAccount, AddAccountModel } from '../../../domain/usecases/add-account'
 
@@ -27,12 +28,7 @@ interface SutTypes {
 }
 
 const makeEmailValidator = (): EmailValidator => {
-    class EmailValidatorStub implements EmailValidator {
-        isValid (email: string): boolean {
-            return (email.indexOf('@') >= 0)
-        }
-    }
-    return new EmailValidatorStub()
+    return new EmailValidatorAdapter()
 }
 
 const makePasswordValidator = (): PasswordValidator => {
