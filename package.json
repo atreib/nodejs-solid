@@ -4,8 +4,14 @@
   "description": "Nodejs Typescript TDD Clean SOLID",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests --silent --runInBand",
+    "test:unit": "jest --passWithNoTests --runInBand -c jest.unit.config.js",
+    "test:integrate": "jest --passWithNoTests --runInBand -c jest.integrate.config.js",
+    "test:clean": "npm t -- --noStackTrace",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:watch": "npm t -- --watch",
+    "test:staged": "npm run test:clean -- --findRelatedTests",
+    "test:ci": "npm t -- --coverage"
   },
   "repository": {
     "type": "git",
