@@ -4,8 +4,14 @@
   "description": "Nodejs Typescript TDD Clean SOLID",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests --silent --runInBand",
+    "test:unit": "jest --passWithNoTests --runInBand -c jest.unit.config.js",
+    "test:integrate": "jest --passWithNoTests --runInBand -c jest.integrate.config.js",
+    "test:clean": "npm t -- --noStackTrace",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:watch": "npm t -- --watch",
+    "test:staged": "npm run test:clean -- --findRelatedTests",
+    "test:ci": "npm t -- --coverage"
   },
   "repository": {
     "type": "git",
@@ -31,6 +37,7 @@
   "devDependencies": {
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.5",
+    "@types/validator": "^13.0.0",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "eslint": "^6.8.0",
     "eslint-config-standard-with-typescript": "^11.0.1",
@@ -44,5 +51,8 @@
     "lint-staged": "^10.2.6",
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "validator": "^13.0.0"
   }
 }
