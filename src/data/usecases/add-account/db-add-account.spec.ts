@@ -81,4 +81,14 @@ describe('data layer - db add account - usecase', () => {
         const promise = sut.add(MOCK_USER_1)
         await expect(promise).rejects.toThrow()
     })
+
+    test('should return an account on success', async () => {
+        const { sut } = makeSut()
+        const result = await sut.add(MOCK_USER_1)
+        expect(result).toEqual({
+            ...MOCK_USER_1,
+            id: 1,
+            password: 'hashed_password'
+        })
+    })
 })
